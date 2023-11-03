@@ -1,0 +1,33 @@
+﻿
+import numpy as np
+import matplotlib.pyplot as plt
+# Generate a set of x-values using np.linspace ranging from -10 to 10
+x = np.linspace(-10, 10, 100)
+def g(x):
+  return x**2 + 2*x + 5
+def h(x):
+  return np.sin(x)
+def i(x):
+  return np.sin(g(x))
+def j(x):
+  return np.exp(-0.1*x)
+# Define the complete function
+def f(x):
+  return i(x) * j(x)
+
+# Plot the complete function
+plt.plot(x, f(x), label='f(x)')
+
+# Set the title and labels for the plot
+plt.title("Complete Function")
+plt.xlabel("x")
+plt.ylabel("y")
+
+# Turn on the axis grids
+plt.grid(True)
+
+# Add a legend to the plot
+plt.legend()
+
+# Display the plot
+plt.show()
